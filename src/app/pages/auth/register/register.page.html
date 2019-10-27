@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngSwitchCase="register">
+      <ion-card class="loginForm">
+      <ion-card-content>
+          <form #monForm="ngForm" >
+              <ion-item>
+                  <ion-label position="floating">Nom </ion-label>
+                  <ion-input type="text" name="nom" [(ngModel)]="envoieData.nom"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Prenom </ion-label>
+                  <ion-input type="text" name="prenom" [(ngModel)]="envoieData.prenom"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Username</ion-label>
+                  <ion-input type="number" name="username" [(ngModel)]="envoieData.username"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input type="text" name="plainPassword" [(ngModel)]="envoieData.plainPassword"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">image</ion-label>
+                  <ion-input type="text" name="image" [(ngModel)]="envoieData.image"></ion-input>
+              </ion-item>
+              <ion-button type="submit" (click)="register()" expand="block" fill="outline" class="btnLogin">Register</ion-button>
+          </form>
+      </ion-card-content>
+    </ion-card>
+    </ion-list>
+</ion-content>

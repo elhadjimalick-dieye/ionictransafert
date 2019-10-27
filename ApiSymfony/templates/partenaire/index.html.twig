@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PartenaireController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    {# <h1>Hello {{ controller_name }}! ✅</h1> #}
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/diene/Musique/ProjetApi/ApiSymfony/src/Controller/PartenaireController.php'|file_link(0) }}">src/Controller/PartenaireController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/diene/Musique/ProjetApi/ApiSymfony/templates/partenaire/index.html.twig'|file_link(0) }}">templates/partenaire/index.html.twig</a></code></li>
+    </ul>
+</div>
+
+<h1>Entre les soussignés :</h1>
+<p>La société Wari , dont le siège social est à Dakar (Sénégal),
+représentée par Mr: Kabirou Mbodje. Désigne si aprés le
+"prestataire" d'une part et La société _________________, Société au capital de _________________ FCFA, 
+dont le siège social est ________________ ____, 
+enregistrée au Registre du Commerce  sous le numéro ____________ , représentée par Mr: _________________ [nom],
+_________________ [prenom]. 
+
+Il a été convenu ce qui suit :
+</p>
+
+<h2>Article premier - Objet</h2> 
+
+<p>Le présent contrat est un contrat de prestation de service ayant pour objet la mission définie <br>
+ au cahier des charges qui est d'obtenir un compte Wari au présent contrat et en faisant partie intégrante.
+<br>
+En contrepartie de la réalisation des prestations définies à l'Article premier ci-dessus, <br>
+le prestataire versera au caissier de la somme forfaitaire de plus de <strong>75000 FCFA</strong>,
+pour qu'il puisse commencer à faire ses opérations de services.
+ventilée de la manière suivante:</p>
+
+
+{% endblock %}

@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title routerLink="/home">Transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="button" ></div>
+<ion-content>
+    <!-- Segment in content -->
+<div class="ion-padding">
+        <ion-segment [(ngModel)]="relationship" color="primary"  >
+          <ion-segment-button value="envoie"  >
+            Envoie
+          </ion-segment-button>
+          <ion-segment-button value="retrait" class="retrait">
+            Retrait
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      
+      <div [(ngSwitch)]="relationship" class="envoi">
+        <ion-list *ngSwitchCase="'envoie'">
+
+
+
+          <ion-card class="loginForm" *ngIf="!isLoading">
+          <ion-card-content>
+              <form #monForm="ngForm" #f >
+                  <ion-item>
+                      <ion-label position="floating">Nom envoyeur</ion-label>
+                      <ion-input type="text" name="nomE" [(ngModel)]="envoieData.nomE"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Prenom envoyeur</ion-label>
+                      <ion-input type="text" name="prenomE" [(ngModel)]="envoieData.prenomE"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Telephone envoyeur</ion-label>
+                      <ion-input type="number" name="telE" [(ngModel)]="envoieData.telE"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Nom expediteur</ion-label>
+                      <ion-input type="text" name="nomEx" [(ngModel)]="envoieData.nomEx"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Prenom expediteur</ion-label>
+                      <ion-input type="text" name="prenomEx" [(ngModel)]="envoieData.prenomEx"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Telephone expediteur</ion-label>
+                      <ion-input type="number" name="telephoneEx" [(ngModel)]="envoieData.telephoneEx"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Adresse</ion-label>
+                    <ion-input type="text" name="adresseEx" [(ngModel)]="envoieData.adresseEx"></ion-input>
+                </ion-item>
+
+                 
+                  <ion-item>
+                    <ion-label position="floating">Montant</ion-label>
+                    <ion-input [(ngModel)]="envoieData.montant"  (keyup)="onKey(f.value)" type="number" name="montant"  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input value="{{values}}" type="number" readonly></ion-input>
+              </ion-item>
+                  <ion-button type="submit" (click)="envoie()" expand="block" fill="outline" class="btnLogin">Envoyer</ion-button>
+              </form>
+          </ion-card-content>
+        </ion-card>
+        </ion-list>
+      </div>
+      
+
+
+
+
+
+
+      <div [(ngSwitch)]="relationship" class="row">
+          <div class="col-md-8">
+        <ion-list *ngSwitchCase="'retrait'">
+
+
+          <ion-card class="loginForm" *ngIf="!isLoading">
+          <ion-card-content>
+              <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+                  <ion-item>
+                      <ion-label position="floating">Code</ion-label>
+                      <ion-input type="number" name="code" [(ngModel)]="retraitData.code"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Carte d'identite</ion-label>
+                      <ion-input type="number" name="cni" [(ngModel)]="retraitData.cni"></ion-input>
+                  </ion-item>
+                  <ion-button type="submit" (click)="retrait()" expand="block" fill="outline" class="btnLogin">Retirer</ion-button>
+              </form>
+          </ion-card-content>
+        </ion-card>
+        </ion-list>
+    </div>
+      </div>
+
+    
+      <ion-card class="welcome-card">
+            <ion-card-header>
+              <ion-card-subtitle>vos transaction a partir des deux options</ion-card-subtitle>
+              <ion-card-title> Wari elhadji malick dieye </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Verifier bien les informations que vous saisissez svp</p>
+            </ion-card-content>
+          </ion-card>
+</ion-content>
