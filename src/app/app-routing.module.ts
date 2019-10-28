@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
-  },
+  }, 
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
@@ -20,6 +20,7 @@ const routes: Routes = [
   },
   { path: 'transaction', loadChildren: './transaction/transaction.module#TransactionPageModule' },
   { path: 'transactionliste', loadChildren: './transactionliste/transactionliste.module#TransactionlistePageModule' },
+  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
 
 ];
 

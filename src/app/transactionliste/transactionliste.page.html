@@ -1,5 +1,8 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header  >
+    <ion-app>
+        <ion-nav root="nav-home"></ion-nav>
+      </ion-app>
+  <ion-toolbar color="primary">
     <ion-title routerLink="/home">transactionliste</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,37 +10,48 @@
 <ion-content>
   <form #f="ngForm" (ngSubmit)="listeTRa(f.value)">
     <ion-input ngModel type="date" name="dateFrom"></ion-input>
+    <ion-progress-bar color="primary" value="1"></ion-progress-bar>
+
     <ion-input ngModel type="date" name="dateTo"></ion-input>
-    <ion-button expand="block" type="submit">Valider</ion-button>
+    <ion-button expand="block" type="submit" class="but">Valider</ion-button>
   </form>
+
   <div class="ion-padding">
+
     <ion-segment [(ngModel)]="relationship" color="primary">
       <ion-segment-button value="transactions">
         Transactions
       </ion-segment-button>
-      <ion-segment-button value="commision" class="retrait">
+      <ion-segment-button value="commision" color="secondary" class="retrait">
         Commissions
       </ion-segment-button>
     </ion-segment>
   </div>
+
+
   <div [(ngSwitch)]="relationship" class="retrait">
-
-
     <ion-card-subtitle *ngSwitchCase="'transactions'">
 
       <ion-list *ngFor="let tab of tableau">
         <ion-card-subtitle>
-          <ion-item>
+          <ion-item class="mont">
             {{tab.montant}}
           </ion-item>
+          <ion-card-subtitle>Informations expediteur</ion-card-subtitle>
+
           <ion-card-subtitle>date d'envoie | {{tab.dateEnvoie}}</ion-card-subtitle>
-          <ion-card-subtitle>date de retrait | {{tab.dateRetrait}}</ion-card-subtitle>
           <ion-card-subtitle>nom envoyeur | {{tab.nomE}}</ion-card-subtitle>
           <ion-card-subtitle>prenom envoyeur | {{tab.prenomE}}</ion-card-subtitle>
+          <ion-progress-bar color="primary" value="0.5">        </ion-progress-bar>
+
+          <ion-card-subtitle>Informations beneficiere</ion-card-subtitle>
+          <ion-card-subtitle>date de retrait | {{tab.dateRetrait}}</ion-card-subtitle>
           <ion-card-subtitle>nom beneficiere | {{tab.nomEx}}</ion-card-subtitle>
           <ion-card-subtitle>prenom beneficiere | {{tab.prenomEx}}</ion-card-subtitle>
           <ion-card-subtitle>frais | {{tab.frais}}</ion-card-subtitle>
         </ion-card-subtitle>
+        <ion-progress-bar color="secondary" value="1"></ion-progress-bar>
+
       </ion-list>
     </ion-card-subtitle>
   </div>
@@ -53,7 +67,13 @@
           </ion-item>
           <ion-card-subtitle>montant de la transaction | {{tab.montant}}</ion-card-subtitle>
         </ion-card-subtitle>
+        <ion-progress-bar color="primary" value="1"></ion-progress-bar>
+
       </ion-list>
     </ion-card-subtitle>
+
   </div>
+      <img src="/assets/téléchargement.jpg" alt="" class="image"/>
+
+
 </ion-content>

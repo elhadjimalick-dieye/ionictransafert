@@ -15,11 +15,7 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
-    {
-      title: 'Register',
-      url: '/register',
-      icon: 'add-circle-outline'
-    },
+  
     {
       title: 'Transaction',
       url: '/transaction',

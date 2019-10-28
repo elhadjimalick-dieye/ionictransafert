@@ -28,7 +28,8 @@ export class TransactionService {
   formData1.append('adresseEx', formData.adresseEx);
   formData1.append('montant', formData.montant);
   console.log(formData);
-  return this.http.post(this.endpoint, formData1);
+  const heades = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
+  return this.http.post(this.endpoint, formData1 , { headers: heades });
 }
 
 frais(Data){
@@ -36,7 +37,7 @@ frais(Data){
   
   const formData4: FormData = new FormData();
   formData4.append('montant',Data);
-const heades = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
+  const heades = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
 return this.http.post(this.endpoint4, formData4, { headers: heades });
 }
 retrait(formData){

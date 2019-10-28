@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from '../services/transaction.service';
+import { ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class TransactionlistePage implements OnInit {
 tableau =[];
 
 
-  constructor( private transaction :TransactionService) { }
+  constructor( private transaction :TransactionService,public modalController: ModalController) { }
   listeTRa(data) {
     console.log(data);
     
@@ -28,7 +29,4 @@ tableau =[];
   ngOnInit() {
   }
 
-  message(){
-    "cette intervale ne dispose de transaction"
-  }
 }

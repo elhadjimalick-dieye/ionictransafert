@@ -5,8 +5,11 @@
 </ion-header>
 
 <ion-content>
+  
   <ion-card class="loginForm" *ngIf="!isLoading">
         <ion-card-content>
+            <img src="/assets/images.png" alt="" class="image"/>
+
           <div class="row">
             <form #f="ngForm" (ngSubmit)="onLogin(f.value)" >
                 <ion-item >
