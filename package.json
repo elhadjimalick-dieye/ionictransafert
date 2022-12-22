@@ -36,7 +36,7 @@
     "express": "^4.17.1",
     "ionic-select-searchable": "^2.10.0",
     "ionic2-calendar": "^0.5.7",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "rxjs": "~6.5.1",
     "sqlite3": "^4.1.0",
     "tslib": "^1.9.0",
